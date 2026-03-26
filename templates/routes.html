@@ -3,7 +3,7 @@
 {% block content %}
 <section class="content-card">
     <h2>All routes</h2>
-    <p>Browse sample transit routes currently available in TransitLink.</p>
+    <p>These are the routes currently matching your accessibility profile.</p>
 
     <div class="card-grid">
         {% for route in routes %}
@@ -15,18 +15,10 @@
             <p><strong>Duration:</strong> {{ route.duration }}</p>
 
             <div class="accessibility-tags">
-                {% if route.wheelchair_access %}
-                    <span class="feature-tag">Wheelchair Access</span>
-                {% endif %}
-                {% if route.step_free %}
-                    <span class="feature-tag">Step-Free</span>
-                {% endif %}
-                {% if route.audio_announcements %}
-                    <span class="feature-tag">Audio Support</span>
-                {% endif %}
-                {% if route.priority_seating %}
-                    <span class="feature-tag">Priority Seating</span>
-                {% endif %}
+                {% if route.wheelchair_access %}<span class="feature-tag">Wheelchair Access</span>{% endif %}
+                {% if route.step_free %}<span class="feature-tag">Step-Free</span>{% endif %}
+                {% if route.audio_announcements %}<span class="feature-tag">Audio Support</span>{% endif %}
+                {% if route.priority_seating %}<span class="feature-tag">Priority Seating</span>{% endif %}
             </div>
 
             <a href="{{ url_for('route_detail', route_id=route.id) }}" class="details-button">View Details</a>
