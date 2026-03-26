@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="content-card narrow-card">
+    <h2>TransitLink AI Chat</h2>
+    <p>Ask a travel question. This is a starter chatbot page for your project.</p>
+
+    <form method="POST" class="stacked-form">
+        <textarea name="message" rows="5" placeholder="Ask about fares, delays, airport routes, or travel help...">{{ user_message }}</textarea>
+        <button type="submit">Send</button>
+    </form>
+
+    {% if reply %}
+    <div class="chat-reply">
+        <h4>TransitLink Assistant</h4>
+        <p>{{ reply }}</p>
+    </div>
+    {% endif %}
+</section>
+{% endblock %}
