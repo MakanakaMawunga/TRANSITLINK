@@ -1,0 +1,69 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero-simple">
+    <div class="hero-card">
+        <h2>Plan your journey</h2>
+        <p>Search routes across bus, rail, and ferry services in one place.</p>
+
+        <form action="{{ url_for('search') }}" method="POST" class="search-form stacked-form">
+            <select name="start" required>
+                <option value="">Select starting location</option>
+                {% for location in locations %}
+                    <option value="{{ location }}" {% if selected_start == location.lower() %}selected{% endif %}>{{ location }}</option>
+                {% endfor %}
+            </select>
+
+            <select name="destination" required>
+                <option value="">Select destination</option>
+                {% for location in locations %}
+                    <option value="{{ location }}" {% if selected_destination == location.lower() %}selected{% endif %}>{{ location }}</option>
+                {% endfor %}
+            </select>
+
+            <button type="submit">Search Route</button>
+        </form>
+    </div>
+</section>
+
+{% if results is not none %}
+<section class="content-card">
+    <h3>Journey results</h3>
+    {% if results %}
+        <div class="card-grid">
+            {% for route in results %}
+            <div class="info-card">
+                <h4>{{ route.transport }}</h4>
+                <p>{{ route.start }} → {{ route.destination }}</p>
+                <p><strong>Departure:</strong> {{ route.time }}</p>
+                <p><strong>Fare:</strong> {{ route.fare }}</p>
+                <p><strong>Duration:</strong> {{ route.duration }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="empty-text">No routes found for that journey yet.</p>
+    {% endif %}
+</section>
+{% endif %}
+
+<section class="content-card">
+    <h3>Why TransitLink?</h3>
+    <div class="card-grid">
+        <div class="info-card">
+            <h4>All-in-one travel</h4>
+            <p>Bus, train, and ferry routes in one clean journey planner.</p>
+        </div>
+        <div class="info-card">
+            <h4>Live support</h4>
+            <p>Use the AI chat page for quick travel help and route guidance.</p>
+        </div>
+        <div class="info-card">
+            <h4>User feedback</h4>
+            <p>Collect feedback to improve routes, app design, and services.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
