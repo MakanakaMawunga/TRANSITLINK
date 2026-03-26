@@ -72,4 +72,16 @@
     "start": "School",
     "destination": "Home",
     "transport": "Bus 7",
+    "time": "15:40",
+    "next_service": "16:00",
+    "fare": "£2.10",
+    "duration": "14 mins",
+    "walk_to_stop": "7 mins",
+    "stop_name": "Campus Stop B",
+    "status": "On Time",
+    "wheelchair_access": false,
+    "step_free": false,
+    "audio_announcements": true,
+    "priority_seating": true
+  }
 ]
