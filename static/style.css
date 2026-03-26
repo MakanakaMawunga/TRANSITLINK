@@ -1,161 +1,4 @@
 * {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #edf4f8;
-    color: #163040;
-}
-
-/* NAVBAR */
-.topbar {
-    background: #ffffff;
-    padding: 14px 28px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-    flex-wrap: wrap;
-}
-
-.brand-wrap {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-/* FIXED LOGO */
-.logo {
-    width: 36px;
-    height: 36px;
-    object-fit: contain;
-    background: transparent;
-}
-
-.brand-name {
-    margin: 0;
-    font-size: 20px;
-    color: #0b4f7a;
-}
-
-.brand-tag {
-    margin: 0;
-    font-size: 12px;
-    color: #5b7688;
-}
-
-/* NAV LINKS */
-.nav-links {
-    display: flex;
-    gap: 14px;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #164e63;
-    font-weight: 600;
-    font-size: 14px;
-}
-
-.nav-links a:hover {
-    color: #0ea5e9;
-}
-
-.nav-button {
-    background: #0ea5e9;
-    color: white !important;
-    padding: 8px 14px;
-    border-radius: 8px;
-}
-
-/* PAGE LAYOUT */
-.page-shell {
-    width: 92%;
-    max-width: 1000px;
-    margin: 24px auto 40px;
-}
-
-/* HERO / MAIN CARD */
-.hero-simple {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.hero-card,
-.content-card {
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-    padding: 24px;
-}
-
-.hero-card {
-    width: 100%;
-    max-width: 650px;
-    text-align: center;
-}
-
-.hero-card h2 {
-    margin-top: 0;
-    color: #0b4f7a;
-}
-
-/* FORMS */
-.stacked-form {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 16px;
-}
-
-.search-form select,
-.stacked-form input,
-.stacked-form select,
-.stacked-form textarea,
-.stacked-form button {
-    padding: 12px;
-    border-radius: 10px;
-    font-size: 14px;
-}
-
-.search-form select,
-.stacked-form input,
-.stacked-form select,
-.stacked-form textarea {
-    border: 1px solid #c9d7e1;
-    background: #f8fbfd;
-}
-
-.search-form button,
-.stacked-form button {
-    border: none;
-    background: #0ea5e9;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.search-form button:hover,
-.stacked-form button:hover {
-    background: #0284c7;
-}
-
-/* CARDS */
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 16px;
-    margin-top: 16px;
-}
-
-.info-card {
-    background: #f6fbfe;
     border: 1px solid #dbeaf2;
     border-radius: 14px;
     padding: 16px;
@@ -166,7 +9,6 @@ body {
     font-weight: 600;
 }
 
-/* CHATBOT */
 .chat-reply {
     margin-top: 14px;
     background: #eef9ff;
@@ -175,14 +17,40 @@ body {
     border-radius: 10px;
 }
 
-/* SUCCESS TEXT */
 .success-text {
     margin-top: 14px;
     color: #15803d;
     font-weight: 600;
 }
 
-/* FOOTER */
+.details-button {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: #0ea5e9;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.accessibility-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.feature-tag {
+    background: #e0f2fe;
+    color: #075985;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
 .footer {
     text-align: center;
     padding: 24px 16px 30px;
@@ -204,7 +72,6 @@ body {
     font-size: 14px;
 }
 
-/* MOBILE */
 @media (max-width: 768px) {
     .topbar {
         flex-direction: column;
@@ -215,36 +82,4 @@ body {
     .content-card {
         padding: 20px;
     }
-}
-
-.details-button {
-    display: inline-block;
-    margin-top: 12px;
-    padding: 10px 14px;
-    background: #0ea5e9;
-    color: white;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.details-button:hover {
-    background: #0284c7;
-}
-
-.accessibility-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 12px;
-}
-
-.feature-tag {
-    background: #e0f2fe;
-    color: #075985;
-    padding: 6px 10px;
-    border-radius: 999px;
-    font-size: 12px;
-    font-weight: 600;
 }
