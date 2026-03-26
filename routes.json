@@ -1,6 +1,5 @@
 [
-
-    {
+  {
     "id": 1,
     "start": "Aberdeen",
     "destination": "Union Square",
@@ -17,7 +16,6 @@
     "audio_announcements": true,
     "priority_seating": true
   },
-
   {
     "id": 2,
     "start": "Aberdeen",
@@ -35,64 +33,43 @@
     "audio_announcements": true,
     "priority_seating": true
   },
-
   {
     "id": 3,
-    "start": "Aberdeen",
-    "destination": "Union Square",
-    "transport": "Bus 1",
-    "time": "08:30",
-    "fare": "£2.50",
-    "duration": "12 mins"
-  },
-
-  {
-    "id": 4,
-    "start": "Aberdeen",
-    "destination": "Robert Gordon University",
-    "transport": "Bus 2",
-    "time": "09:00",
-    "fare": "£2.80",
-    "duration": "18 mins"
-  },
-
-  {
-    "id": 5,
-    "start": "Union Square",
-    "destination": "Robert Gordon University",
-    "transport": "Bus 3",
-    "time": "10:15",
-    "fare": "£2.20",
-    "duration": "15 mins"
-  },
-
-  {
-    "id": 6,
-    "start": "Aberdeen",
-    "destination": "Airport",
-    "transport": "Train A",
-    "time": "11:00",
-    "fare": "£4.50",
-    "duration": "25 mins"
-  },
-
-  {
-    "id": 7,
-    "start": "Airport",
-    "destination": "Union Square",
-    "transport": "Train B",
-    "time": "12:00",
-    "fare": "£4.20",
-    "duration": "23 mins"
-  },
-  {
-    "id": 8,
     "start": "Aberdeen Harbour",
     "destination": "South Bay",
     "transport": "Ferry 1",
     "time": "17:30",
+    "next_service": "18:00",
     "fare": "£6.00",
-    "duration": "35 mins"
-  }
-
+    "duration": "35 mins",
+    "walk_to_stop": "5 mins",
+    "stop_name": "Harbour Dock 2",
+    "status": "On Time",
+    "wheelchair_access": true,
+    "step_free": true,
+    "audio_announcements": false,
+    "priority_seating": true
+  },
+  {
+    "id": 4,
+    "start": "Union Square",
+    "destination": "Airport",
+    "transport": "Train A",
+    "time": "11:15",
+    "next_service": "11:45",
+    "fare": "£4.60",
+    "duration": "24 mins",
+    "walk_to_stop": "3 mins",
+    "stop_name": "Union Square Rail Platform 1",
+    "status": "On Time",
+    "wheelchair_access": true,
+    "step_free": true,
+    "audio_announcements": true,
+    "priority_seating": true
+  },
+  {
+    "id": 5,
+    "start": "School",
+    "destination": "Home",
+    "transport": "Bus 7",
 ]
