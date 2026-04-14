@@ -1,10 +1,14 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
-
 {% extends "base.html" %}
-        <p class="profile-note">Current accessibility filtering follows your saved profile preferences.</p>
 
-        <form action="{{ url_for('search') }}" method="POST" class="search-form stacked-form">
+{% block content %}
+<section class="hero-simple">
+    <div class="hero-card">
+        <h2>Plan your journey</h2>
+        <p>Search routes across bus, rail, and ferry services in one place.</p>
+        <p class="profile-note">Current route filtering follows your saved accessibility preferences.</p>
+
+        <form action="{{ url_for('search') }}" method="POST" class="stacked-form">
             <select name="start" required>
                 <option value="">Select starting location</option>
                 {% for location in locations %}
