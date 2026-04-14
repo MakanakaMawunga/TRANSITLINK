@@ -29,7 +29,9 @@ def load_routes():
 
 
 def get_locations(routes):
-    return sorted(list(set([route["start"] for route in routes] + [route["destination"] for route in routes])))
+    return sorted(list(set(
+        [route["start"] for route in routes] + [route["destination"] for route in routes]
+    )))
 
 
 def filter_routes_for_profile(routes):
@@ -66,8 +68,9 @@ def search():
     start = request.form.get("start", "").strip().lower()
     destination = request.form.get("destination", "").strip().lower()
 
-    routes = filter_routes_for_profile(load_routes())
-    locations = get_locations(load_routes())
+    all_routes = load_routes()
+    routes = filter_routes_for_profile(all_routes)
+    locations = get_locations(all_routes)
 
     matches = []
     for route in routes:
@@ -103,7 +106,7 @@ def route_detail(route_id):
     if selected_route is None:
         return "Route not found", 404
 
-    return render_template("route_detail.html", route=selected_route)
+    return render_template("route_detail.html", route=selected_route, profile=USER_PROFILE)
 
 
 @app.route("/profile", methods=["GET", "POST"])
@@ -152,11 +155,11 @@ def chatbot():
         text = user_message.lower()
 
         if "accessible" in text or "wheelchair" in text:
-            reply = "Based on your saved profile, TransitLink is showing routes with accessibility support such as wheelchair access, step-free boarding, audio announcements, and priority seating where available."
+            reply = "Based on your saved profile, TransitLink is showing routes with wheelchair access, step-free access, audio announcements, and priority seating where available."
         elif "home" in text:
-            reply = f"Your saved home location is {USER_PROFILE['home_location']}. You can use the saved routes page to quickly open your frequent journeys."
+            reply = f"Your saved home location is {USER_PROFILE['home_location']}."
         elif "school" in text:
-            reply = f"Your saved school location is {USER_PROFILE['school_location']}. You can search routes between home and school from the dashboard."
+            reply = f"Your saved school location is {USER_PROFILE['school_location']}."
         elif "work" in text:
             reply = f"Your saved work location is {USER_PROFILE['work_location']}."
         elif "shopping" in text:
@@ -164,7 +167,7 @@ def chatbot():
         elif "delay" in text:
             reply = "Current example delay: Bus 2 to Robert Gordon University is delayed."
         else:
-            reply = "I can help with saved places, accessible routes, delays, and frequent journeys. Try asking about home, work, school, shopping, or accessible travel."
+            reply = "Ask me about accessible routes, home, work, school, shopping, or delays."
 
     return render_template("chatbot.html", reply=reply, user_message=user_message, profile=USER_PROFILE)
 
@@ -174,23 +177,23 @@ def feedback():
     submitted = False
     if request.method == "POST":
         submitted = True
-    return render_template("feedback.html", submitted=submitted)
+    return render_template("feedback.html", submitted=submitted, profile=USER_PROFILE)
 
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
     message = None
     if request.method == "POST":
-        message = "Login feature UI complete. You can connect this to a real database later."
-    return render_template("login.html", message=message)
+        message = "Login UI works. Real authentication can be added later."
+    return render_template("login.html", message=message, profile=USER_PROFILE)
 
 
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
     message = None
     if request.method == "POST":
-        message = "Sign-up feature UI complete. You can connect this to a real database later."
-    return render_template("signup.html", message=message)
+        message = "Sign-up UI works. Real account creation can be added later."
+    return render_template("signup.html", message=message, profile=USER_PROFILE)
 
 
 if __name__ == "__main__":
