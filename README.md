@@ -83,7 +83,7 @@ Mobile app version
 
 
 
-## How to run the protorype:
+## How to run the prototype:
 1.	Download the TRANSITLINK.zip that can be found on the GitHub repository.
 2.	Once the files in the Zip file have been downloaded, open app.py which can be found under the main file. 
 3.	In the console of app.py, run python app.py using the file path where the file has been saved.
