@@ -16,6 +16,7 @@ TransitLink is a smart transport planning web application that helps users find 
 ## Key Features
 ### Smart Route Search
 •	Find routes instantly 
+
 •	Compare travel options 
 ### Accessibility Filtering
 •	Wheelchair access 
