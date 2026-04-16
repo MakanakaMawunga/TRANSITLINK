@@ -8,7 +8,7 @@ CM3141 – Pirate Studies
 - Imogen Allen
 - Ethaniel Allen
 - Makanaka Mawunga
-- Chiaza Chukunwendu
+- Chiaza Chukwunwendu
 - Maksymilian Sokolowski
 
 ---
