@@ -45,25 +45,39 @@ TransitLink is a smart transport planning web application that helps users find 
 ### How It Works
 
 Enter your start and destination
+
 Apply accessibility preferences
+
 View recommended routes
+
 Click for detailed journey info
+
 Save frequent routes
+
 
 ### Who Is It For?
 
 Students
+
 Commuters
+
 Tourists
+
 People with accessibility needs
+
 
 ### Future Enhancements
 
 Real-time transport data
+
 Live tracking
+
 Map integration
+
 User accounts & database
+
 Mobile app version
+
 
 ### Start your journey with TransitLink today.
 
