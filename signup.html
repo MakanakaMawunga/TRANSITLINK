@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="content-card narrow-card">
+    <h2>Sign Up</h2>
+    <p>Create your TransitLink account.</p>
+
+    <form method="POST" class="stacked-form">
+        <input type="text" name="fullname" placeholder="Full name" required>
+        <input type="email" name="email" placeholder="Email address" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="password" name="confirm_password" placeholder="Confirm password" required>
+        <button type="submit">Create Account</button>
+    </form>
+
+    {% if message %}
+    <p class="success-text">{{ message }}</p>
+    {% endif %}
+</section>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="content-card narrow-card">
+    <h2>Feedback</h2>
+    <p>Tell us what works well and what should improve.</p>
+
+    <form method="POST" class="stacked-form">
+        <input type="text" name="name" placeholder="Your name">
+        <input type="email" name="email" placeholder="Your email">
+        <select name="rating">
+            <option value="">Rate your experience</option>
+            <option>Excellent</option>
+            <option>Good</option>
+            <option>Average</option>
+            <option>Poor</option>
+        </select>
+        <textarea name="comments" rows="5" placeholder="Share your feedback..."></textarea>
+        <button type="submit">Submit Feedback</button>
+    </form>
+
+    {% if submitted %}
+    <p class="success-text">Thanks. Your feedback form was submitted.</p>
+    {% endif %}
+</section>
+{% endblock %}
